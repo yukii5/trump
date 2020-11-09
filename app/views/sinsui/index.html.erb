@@ -1,0 +1,17 @@
+<%= button_to(
+        "シャッフルして配りなおす",
+        { action: :index },
+        method: :get,
+        data: { confirm: "現在のゲームがクリアされますが\nいいですか？" }
+             ) %>
+<br>
+<%= flash[:message] %><br>
+<%= flash[:prompt] %><br>
+<br>
+<% for i in 0...@stage.size do %>
+  <% if i!=0 && 0==(i%11) then %>
+    <br>
+  <% end %>
+
+  <%= link_to image_tag( @stage.image( i ) ), action: :show, id: i %>
+<% end %>

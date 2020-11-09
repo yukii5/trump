@@ -1,0 +1,2 @@
+module SinsuiHelper
+end
